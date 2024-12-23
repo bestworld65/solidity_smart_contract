@@ -38,6 +38,7 @@ contract Users {
 
   function destroy_confirm () public {
     require(exists(msg.sender));
+    require(exists(_address));
     delete users[msg.sender];
     emit UserDestroyed(msg.sender);
   }
